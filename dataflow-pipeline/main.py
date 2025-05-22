@@ -53,7 +53,7 @@ def run(argv=None):
     region='type-your-region-here')
     options.view_as(StandardOptions).streaming = True  # Streaming mode
     topic_variable='type-your-pubsub-topic-here'
-    bq_table='your-project:your-bq-dataset.your-bq-table'
+    bq_table='your-project:football_api_dataset.football_api_table'
     bq_schema="""
                     id:STRING,
                     home_team_name:STRING,
