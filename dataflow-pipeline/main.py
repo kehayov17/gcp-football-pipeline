@@ -47,21 +47,14 @@ def is_finished_match(fixture):
 
 def run(argv=None):
     options = PipelineOptions(runner='DataflowRunner',  # Use DirectRunner locally if you want local run
-    project='macro-climber-460217-h6',
-    temp_location='gs://temp_location_soccer_pipeline',
-    staging_location='gs://staging_soccer_pipeline',
-    region='europe-west1')
+    project='your-gcp-project',
+    temp_location='gs://type-your-temp-bucket-here',
+    staging_location='gs://type-your-staging-bucket-here',
+    region='type-your-region-here')
     options.view_as(StandardOptions).streaming = True  # Streaming mode
-
-    with beam.Pipeline(options=options) as p:
-        (
-            p
-            | "ReadFromPubSub" >> beam.io.ReadFromPubSub(topic="projects/macro-climber-460217-h6/topics/soccer-api-topic")
-            | "ParseMessage" >> beam.Map(parse_pubsub_message)
-            | "FilterFinishedMatches" >> beam.Filter(is_finished_match)
-            | "WriteToBigQuery" >> beam.io.WriteToBigQuery(
-                table="macro-climber-460217-h6:soccer_api_dataset.soccer_api_table",
-                schema="""
+    topic_variable='type-your-pubsub-topic-here'
+    bq_table='your-project:your-bq-dataset.your-bq-table'
+    bq_schema="""
                     id:STRING,
                     home_team_name:STRING,
                     away_team_name:STRING,
@@ -80,7 +73,16 @@ def run(argv=None):
                     country_name:STRING,
                     ht_score:STRING,
                     ft_score:STRING
-                """,
+                """
+    with beam.Pipeline(options=options) as p:
+        (
+            p
+            | "ReadFromPubSub" >> beam.io.ReadFromPubSub(topic=topic_variable)
+            | "ParseMessage" >> beam.Map(parse_pubsub_message)
+            | "FilterFinishedMatches" >> beam.Filter(is_finished_match)
+            | "WriteToBigQuery" >> beam.io.WriteToBigQuery(
+                table=bq_table,
+                schema=bq_schema,
                 write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
                 create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
             )
