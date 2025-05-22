@@ -47,13 +47,13 @@ def is_finished_match(fixture):
 
 def run(argv=None):
     options = PipelineOptions(runner='DataflowRunner',  # Use DirectRunner locally if you want local run
-    project='your-gcp-project',
-    temp_location='gs://type-your-temp-bucket-here',
-    staging_location='gs://type-your-staging-bucket-here',
+    project_id='your-gcp-project_id',
+    temp_location='gs://type-your-temp-bucket-here/temp',
+    staging_location='gs://type-your-staging-bucket-here/staging',
     region='type-your-region-here')
     options.view_as(StandardOptions).streaming = True  # Streaming mode
     topic_variable='type-your-pubsub-topic-here'
-    bq_table='your-project:football_api_dataset.football_api_table'
+    bq_table='your-project-id:football_api_dataset.football_api_table'
     bq_schema="""
                     id:STRING,
                     home_team_name:STRING,
