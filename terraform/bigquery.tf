@@ -1,13 +1,13 @@
-resource "google_bigquery_dataset" "soccer_dataset" {
-  dataset_id = "soccer_api_dataset"
+resource "google_bigquery_dataset" "football_dataset" {
+  dataset_id = "football_api_dataset"
   project    = var.project_id
   location   = var.region
-  description = "Dataset for soccer fixtures data"
+  description = "Dataset for football fixtures data"
 }
 
-resource "google_bigquery_table" "soccer_table" {
-  dataset_id = google_bigquery_dataset.soccer_dataset.dataset_id
-  table_id   = "soccer_api_table"
+resource "google_bigquery_table" "football_table" {
+  dataset_id = google_bigquery_dataset.football_dataset.dataset_id
+  table_id   = "football_api_table"
   project    = var.project_id
 
   schema = <<EOF
@@ -42,6 +42,6 @@ EOF
 
   labels = {
     environment = "dev"
-    team        = "soccer-data"
+    team        = "football-data"
   }
 }
