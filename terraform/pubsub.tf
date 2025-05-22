@@ -11,6 +11,6 @@ resource "google_pubsub_topic_iam_binding" "allow_scheduler_publish" {
 
   role    = "roles/pubsub.publisher"
   members = [
-    "serviceAccount:cloud-scheduler@system.gserviceaccount.com"
+    "serviceAccount:${var.project_number}-compute@developer.gserviceaccount.com"
   ]
 }
