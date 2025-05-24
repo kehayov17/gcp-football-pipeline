@@ -1,5 +1,6 @@
 # gcp-football-pipeline
-This project is an end-to-end, serverless data pipeline built on Google Cloud Platform that fetches football fixture data from a third-party API, processes it using Apache Beam on Dataflow, and stores it in BigQuery for analysis.  The pipeline is orchestrated with Cloud Scheduler, triggered via Pub/Sub, and deployed entirely using Terraform.
+This project is an end-to-end, serverless data pipeline built on Google Cloud Platform that fetches football fixture data from a third-party API, processes it using Apache Beam on Dataflow, and stores it in BigQuery for analysis. The pipeline is orchestrated with Cloud Scheduler, triggered via Pub/Sub, and deployed entirely using Terraform.The pipeline uses the soccersapi.com API for football fixtures which has a free plan you can use to test and see how the pipeline works.
+
 # Set-up
 In the setup we will run Terraform to create the needed resources for the pipeline.We will configure only Dataflow manually.
 
@@ -33,8 +34,9 @@ Inside your cloud-functions/api-to-pubsub directory create a .zip package with y
 zip -r api-to-pubsub.zip main.py requirements.txt
 ```
 
-3.Deploy:
-Go back to the root dir and cd into terraform
+3.Deploy
+
+Go back to the root dir and cd into terraform:
 ```
 cd terraform
 ```
@@ -68,21 +70,30 @@ gcloud storage buckets create gs://staging_football_pipeline_bucket
 You can choose different names for the buckets , but make sure to remember them because we will need to specify them in the beam code.
 
 2.Create a User-managed Notebook in Vertex AI's Workbench.
+
+<img width="517" alt="Screenshot 2025-05-24 at 12 44 35" src="https://github.com/user-attachments/assets/90a31d82-0519-42a3-9858-ef2dd2065b24" />
+
 Wait until it's created and open the Notebook
-
-
-
+<img width="147" alt="Screenshot 2025-05-24 at 12 44 46" src="https://github.com/user-attachments/assets/efe5ac04-685a-4fde-a92a-74f134359c12" />
 3.Open a termninal once you're inside and clone the repo.
+
+<img width="665" alt="Screenshot 2025-05-24 at 12 48 30" src="https://github.com/user-attachments/assets/65d8d3c6-573e-4318-9631-d8a795d5ba16" />
+
+
 ```
 git clone https://github.com/kehayov17/gcp-football-pipeline.git
 ```
 Go to dataflow-pipeline/main.py and open it.
 
 Insert a cell above the code and run this command in it:
+
+<img width="732" alt="Screenshot 2025-05-24 at 12 49 02" src="https://github.com/user-attachments/assets/4a1253fc-b0cd-411a-9e10-430c2ed12c6a" />
+
+
 ```
 !pip install apache-beam[gcp]==2.50
 ```
-
+Wait for beam to install.
 Run the cell with the beam code.
 
 The Dataflow job should be submitted . You can go back to GCP and navigate to Dataflow Jobs. The job should be running.
