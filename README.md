@@ -25,7 +25,9 @@ Open the function.tf file and change the env varibales to your api username and 
 When you use Terraform to create a Cloud function , a .zip is expected with the source code and a requirements.txt file.
 
 Go back to the terminal and cd into the cloud-functions/api-to-pubsub directory:
-
+```
+cd cloud-functions/api-to-pubsub
+```
 Inside your cloud-functions/api-to-pubsub directory create a .zip package with your function code and requirements:
 ```
 cd cloud-functions/api-to-pubsub
