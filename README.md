@@ -30,7 +30,6 @@ cd cloud-functions/api-to-pubsub
 ```
 Inside your cloud-functions/api-to-pubsub directory create a .zip package with your function code and requirements:
 ```
-cd cloud-functions/api-to-pubsub
 zip -r api-to-pubsub.zip main.py requirements.txt
 ```
 
