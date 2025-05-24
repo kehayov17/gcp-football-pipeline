@@ -84,6 +84,9 @@ Wait until it's created and open the Notebook
 git clone https://github.com/kehayov17/gcp-football-pipeline.git
 ```
 Go to dataflow-pipeline/main.py and open it.
+Change the variables :
+<img width="760" alt="Screenshot 2025-05-24 at 12 53 16" src="https://github.com/user-attachments/assets/0726acb1-3e9f-4776-8fd2-ef6360c5166f" />
+
 
 Insert a cell above the code and run this command in it:
 
