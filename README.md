@@ -10,12 +10,12 @@ git clone https://github.com/kehayov17/gcp-football-pipeline.git
 
 2.Open the editor in Cloud Shell and edit the terraform.tfvars file to change the variables to your values:
 
-
+<img width="489" alt="Screenshot 2025-05-24 at 12 37 37" src="https://github.com/user-attachments/assets/ca17b67f-041b-4bd5-a055-29afff395f53" />
 
 Open the function.tf file and change the env varibales to your api username and token:
 
 
-<img width="489" alt="Screenshot 2025-05-24 at 12 37 37" src="https://github.com/user-attachments/assets/ca17b67f-041b-4bd5-a055-29afff395f53" />
+
 
 
 
