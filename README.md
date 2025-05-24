@@ -4,8 +4,9 @@ This project is an end-to-end, serverless data pipeline built on Google Cloud Pl
 In the setup we will run Terraform to create the needed resources for the pipeline.We will configure only Dataflow manually.
 
 1.Open your Cloud Shell and clone the repo:
-
-
+```
+git clone https://github.com/kehayov17/gcp-football-pipeline.git
+```
 
 2.Open the editor in Cloud Shell and edit the terraform.tfvars file to change the variables to your values:
 
@@ -23,11 +24,26 @@ When you use Terraform to create a Cloud function , a .zip is expected with the 
 Go back to the terminal and cd into the cloud-functions/api-to-pubsub directory:
 
 Inside your cloud-functions/api-to-pubsub directory create a .zip package with your function code and requirements:
-``` cd cloud-functions/api-to-pubsub
-    zip -r api-to-pubsub.zip main.py requirements.txt
+```
+cd cloud-functions/api-to-pubsub
+zip -r api-to-pubsub.zip main.py requirements.txt
 ```
 
 3.Deploy:
+Go back to the root dir and cd into terraform
+```
+cd terraform
+```
+Now run :
+```
+terrafrom init
+```
+```
+terraform plan
+```
+```
+terraform apply --auto-approve
+```
 
 *Note : Terraform will enable all the needed apis upon deployment , but when you try to deploy for the first time you might encounter an error . Thats because the activation of the apis needs a couple of minutes , but Terraform proceeds to create the resources. If you get an error , just wait 2-3 minutes and run terraform apply --auto-approve again .This time the deployment should work.
 
@@ -40,10 +56,12 @@ Trigger topic name
 Output topic name
 
 #Configuring Dataflow
-1.Create staging and temp buckets for the pipeline:
-
-
-
+1.Create staging and temp buckets for the pipeline from the cloud shell:
+```
+gcloud storage buckets create gs://temp_football_pipeline_bucket
+gcloud storage buckets create gs://staging_football_pipeline_bucket
+```
+You can choose different names for the buckets , but make sure to remember them because we will need to specify them in the beam code.
 
 2.Create a User-managed Notebook in Vertex AI's Workbench.
 Wait until it's created and open the Notebook
@@ -51,13 +69,15 @@ Wait until it's created and open the Notebook
 
 
 3.Open a termninal once you're inside and clone the repo.
-
+```
+git clone https://github.com/kehayov17/gcp-football-pipeline.git
+```
 Go to dataflow-pipeline/main.py and open it.
 
 Insert a cell above the code and run this command in it:
-
+```
 !pip install apache-beam[gcp]==2.50
-
+```
 
 Run the cell with the beam code.
 
