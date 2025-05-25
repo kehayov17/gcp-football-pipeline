@@ -103,4 +103,4 @@ Insert a cell above the code and run this command in it:
 Wait for beam to install.
 Run the cell with the beam code.
 
-The Dataflow job should be submitted . You can go back to GCP and navigate to Dataflow Jobs. The job should be running.
+The Dataflow job should be submitted . You can go back to GCP and navigate to Dataflow Jobs. The job should be running. Cloud Shechduler is configured to send an empty json string to the trigger topic every 3 hours . The Cloud function listens to the trigger topic and calls the api , after that it sends the json message from the api containing the football fixture to the output topic. The Dataflow job gets the messages from this topic and after processing them it writes them to BigQuery for storage and analysis.
