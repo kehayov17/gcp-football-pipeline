@@ -1,7 +1,8 @@
 # gcp-football-pipeline
 This project is an end-to-end, serverless data pipeline built on Google Cloud Platform that fetches football fixture data from a third-party API, processes it using Apache Beam on Dataflow, and stores it in BigQuery for analysis. The pipeline is orchestrated with Cloud Scheduler, triggered via Pub/Sub, and deployed entirely using Terraform.The pipeline uses the soccersapi.com API for football fixtures which has a free plan you can use to test and see how the pipeline works.
 
-[Third Party API.pdf](https://github.com/user-attachments/files/20431382/Third.Party.API.pdf)
+![Third Party API](https://github.com/user-attachments/assets/a8b3edbd-fe21-493e-ab7f-b7f5e548f8be)
+
 
 # Set-up
 In the setup we will run Terraform to create the needed resources for the pipeline.We will configure only Dataflow manually.
