@@ -29,8 +29,8 @@ resource "google_cloudfunctions2_function" "api_to_pubsub" {
     available_memory = "256M"
     timeout_seconds  = 60
     environment_variables = {
-      user         = "your-api-username"
-      token        = "your-api-token"
+      user         = data.google_secret_manager_secret_version.api_user.secret_data
+      token        = data.google_secret_manager_secret_version.api_token.secret_data
       project-id   = var.project_id
       pubsub-topic = google_pubsub_topic.output_topic.name
     }
