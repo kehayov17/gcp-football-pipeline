@@ -21,6 +21,7 @@ And the name for the secret for the username to ```football-api-username```
 
 Make sure that the names match exatcly because we later reference these secrets in Terraform
 
+**Setting up the pipeline**
 
 1.Open your Cloud Shell and clone the repo:
 ```
