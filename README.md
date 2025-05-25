@@ -12,12 +12,10 @@ Before we run Terraform we need to create two secrets in Secret Manager.
 
 
 Set the name of the secret for the token to ```football-api-token```
-
-<img width="565" alt="Screenshot 2025-05-25 at 17 51 36" src="https://github.com/user-attachments/assets/cda3c6bc-b40b-44d1-afd5-4fad41ac9958" />
+<img width="570" alt="Screenshot 2025-05-25 at 17 51 47" src="https://github.com/user-attachments/assets/ba8fc1d4-d7c8-4400-8248-864071341d13" />
 
 And the name for the secret for the username to ```football-api-username```
-
-<img width="570" alt="Screenshot 2025-05-25 at 17 51 47" src="https://github.com/user-attachments/assets/ba8fc1d4-d7c8-4400-8248-864071341d13" />
+<img width="565" alt="Screenshot 2025-05-25 at 17 51 36" src="https://github.com/user-attachments/assets/cda3c6bc-b40b-44d1-afd5-4fad41ac9958" />
 
 1.Open your Cloud Shell and clone the repo:
 ```
