@@ -33,7 +33,7 @@ git clone https://github.com/kehayov17/gcp-football-pipeline.git
 <img width="307" alt="Screenshot 2025-05-24 at 12 41 05" src="https://github.com/user-attachments/assets/88fcb170-404e-47d3-8b8c-b99412616cd0" />
 
 
-Open the function.tf file. Here we set the env variables for the function by referencing the secrets we created .
+Open the function.tf file. Here you can see that we set the env variables for the function by referencing the secrets we created .
 
 <img width="630" alt="Screenshot 2025-05-25 at 18 00 38" src="https://github.com/user-attachments/assets/fc24d7a9-ec7c-487e-b526-6b9c3d0de4fc" />
 
