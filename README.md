@@ -62,7 +62,8 @@ Trigger topic name
 
 Output topic name
 
-#Configuring Dataflow
+# Configuring Dataflow
+
 1.Create staging and temp buckets for the pipeline from the cloud shell:
 ```
 gcloud storage buckets create gs://temp_football_pipeline_bucket
