@@ -76,7 +76,9 @@ You can choose different names for the buckets , but make sure to remember them 
 <img width="517" alt="Screenshot 2025-05-24 at 12 44 35" src="https://github.com/user-attachments/assets/90a31d82-0519-42a3-9858-ef2dd2065b24" />
 
 Wait until it's created and open the Notebook
+
 <img width="147" alt="Screenshot 2025-05-24 at 12 44 46" src="https://github.com/user-attachments/assets/efe5ac04-685a-4fde-a92a-74f134359c12" />
+
 3.Open a termninal once you're inside and clone the repo.
 
 <img width="665" alt="Screenshot 2025-05-24 at 12 48 30" src="https://github.com/user-attachments/assets/65d8d3c6-573e-4318-9631-d8a795d5ba16" />
