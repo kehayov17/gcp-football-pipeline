@@ -11,10 +11,10 @@ Before we run Terraform we need to create two secrets in Secret Manager.
 <img width="1080" alt="Screenshot 2025-05-25 at 17 51 14" src="https://github.com/user-attachments/assets/00140b7f-c965-4aa9-96be-735ecde0c715" />
 
 
-Set the name of the secret for the token to ```football-api-token```
+Set the name of the secret for the token to ```football-api-token``` and set the value to your API token.
 <img width="570" alt="Screenshot 2025-05-25 at 17 51 47" src="https://github.com/user-attachments/assets/ba8fc1d4-d7c8-4400-8248-864071341d13" />
 
-And the name for the secret for the username to ```football-api-username```
+And the name for the secret for the username to ```football-api-username``` and set the value to your API user name.
 <img width="565" alt="Screenshot 2025-05-25 at 17 51 36" src="https://github.com/user-attachments/assets/cda3c6bc-b40b-44d1-afd5-4fad41ac9958" />
 
 **Important**
